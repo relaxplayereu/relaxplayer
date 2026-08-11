@@ -76,6 +76,18 @@
     "price": "0",
     "priceCurrency": "USD"
   },
+  "featureList": [
+    "24/7 continuous ambient, ASMR, piano and chillout streaming",
+    "No sign-up or installation required",
+    "Custom playlists built from your own uploaded tracks",
+    "Offline playlist download",
+    "Guided breathing exercises with multiple techniques",
+    "Daily tarot-style card",
+    "Local reminder notifications to pause and breathe",
+    "Listening streaks with levels and experience points",
+    "Community chat with reactions",
+    "28 visual themes plus sunset and night sky modes"
+  ],
   "inLanguage": "en"
 }
 </script>
@@ -122,6 +134,46 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, the player is fully responsive and works on phones, tablets and desktop computers, with a screen-on option so playback controls stay visible during long sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I upload my own tracks and build custom playlists?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The My Files section lets you upload your own audio and combine it with SYNTHLUCIDA tracks into playlists that stay saved in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I listen to RelaxPlayer offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Download Offline button saves the current playlist to your device, so you can keep listening without an internet connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What breathing techniques does RelaxPlayer offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RelaxPlayer includes several guided techniques, such as 4-7-8, box, coherent, calming and sigh breathing, each shown as a pulsing visual guide you can follow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Card of the Day feature?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a small daily tarot-style card, linked from the player, for a short moment of reflection alongside the music. No account or sign-up is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I chat with other listeners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A light community chat lets you share a short message and see reactions from other people listening at the same time, alongside your own listening streak and levels."
       }
     }
   ]
@@ -298,6 +350,7 @@
   <a href="#sounds" onclick="toggleSideNav(false)" data-i18n="nav_sounds">Soundscapes</a>
   <a href="#chillout" onclick="toggleSideNav(false)" data-i18n="nav_chillout">Chillout Music</a>
   <a href="#why" onclick="toggleSideNav(false)" data-i18n="nav_why">Why RelaxPlayer</a>
+  <a href="#toolkit" onclick="toggleSideNav(false)" data-i18n="nav_toolkit">Tools &amp; Extras</a>
   <a href="#articles" onclick="toggleSideNav(false)" data-i18n="nav_articles">Articles</a>
   <a href="#faq" onclick="toggleSideNav(false)" data-i18n="nav_faq">FAQ</a>
   <a href="https://synthlucida.com/player.html" data-i18n="nav_launch">Launch the player →</a>
@@ -431,6 +484,48 @@
     </div>
   </section>
 
+  <section class="content" id="toolkit" aria-labelledby="toolkit-heading">
+    <h2 id="toolkit-heading" data-i18n="toolkit_heading">More than a player</h2>
+    <p class="section-lead" data-i18n="toolkit_lead">Alongside the 24/7 stream, RelaxPlayer bundles a few small tools for making the sound your own.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="icon">📂</span>
+        <h3 data-i18n="toolkit_1_h">Your own playlists</h3>
+        <p data-i18n="toolkit_1_p">Upload your own audio files and mix them with RelaxPlayer tracks into personal playlists you can come back to any time.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⬇️</span>
+        <h3 data-i18n="toolkit_2_h">Offline download</h3>
+        <p data-i18n="toolkit_2_p">Download the current playlist to your device and keep listening even without an internet connection.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🃏</span>
+        <h3 data-i18n="toolkit_3_h">Card of the day</h3>
+        <p data-i18n="toolkit_3_p">Draw a small daily tarot-style card for a short, reflective pause alongside the music — no account needed.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🫁</span>
+        <h3 data-i18n="toolkit_4_h">Guided breathing</h3>
+        <p data-i18n="toolkit_4_p">Choose from several guided breathing techniques, including 4-7-8, box and coherent breathing, with a pulsing visual guide to follow.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔔</span>
+        <h3 data-i18n="toolkit_5_h">Gentle reminders</h3>
+        <p data-i18n="toolkit_5_p">Turn on local reminders that nudge you to pause and breathe every 15 minutes to 4 hours — nothing is ever sent to a server.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📈</span>
+        <h3 data-i18n="toolkit_6_h">Levels &amp; progress</h3>
+        <p data-i18n="toolkit_6_p">Build a simple listening streak that grows into levels and experience points, tracked entirely in your own browser.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💬</span>
+        <h3 data-i18n="toolkit_7_h">Community chat</h3>
+        <p data-i18n="toolkit_7_p">Drop a few words into a light community chat and see reactions from other people listening right now.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="content" id="articles" aria-labelledby="articles-heading">
     <h2 id="articles-heading" data-i18n="articles_heading">Notes on sound, focus &amp; rest</h2>
     <p class="section-lead" data-i18n="articles_lead">A few short reads on how background sound is typically used for relaxation, sleep and concentration.</p>
@@ -491,6 +586,26 @@
         <summary class="faq-q"><span data-i18n="faq_5_q">Does RelaxPlayer work on mobile phones?</span> <span class="chev">+</span></summary>
         <div class="faq-a" data-i18n="faq_5_a">Yes, the player is fully responsive and works on phones, tablets and desktop computers, with a screen-on option so playback controls stay visible during long sessions.</div>
       </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-i18n="faq_6_q">Can I upload my own tracks and build custom playlists?</span> <span class="chev">+</span></summary>
+        <div class="faq-a" data-i18n="faq_6_a">Yes. The My Files section lets you upload your own audio and combine it with SYNTHLUCIDA tracks into playlists that stay saved in your browser.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-i18n="faq_7_q">Can I listen to RelaxPlayer offline?</span> <span class="chev">+</span></summary>
+        <div class="faq-a" data-i18n="faq_7_a">Yes. The Download Offline button saves the current playlist to your device, so you can keep listening without an internet connection.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-i18n="faq_8_q">What breathing techniques does RelaxPlayer offer?</span> <span class="chev">+</span></summary>
+        <div class="faq-a" data-i18n="faq_8_a">RelaxPlayer includes several guided techniques, such as 4-7-8, box, coherent, calming and sigh breathing, each shown as a pulsing visual guide you can follow.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-i18n="faq_9_q">What is the Card of the Day feature?</span> <span class="chev">+</span></summary>
+        <div class="faq-a" data-i18n="faq_9_a">It is a small daily tarot-style card, linked from the player, for a short moment of reflection alongside the music. No account or sign-up is required.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-i18n="faq_10_q">Can I chat with other listeners?</span> <span class="chev">+</span></summary>
+        <div class="faq-a" data-i18n="faq_10_a">Yes. A light community chat lets you share a short message and see reactions from other people listening at the same time, alongside your own listening streak and levels.</div>
+      </details>
     </div>
   </section>
 </main>
@@ -526,6 +641,7 @@
     nav_sounds: { en: 'Soundscapes', cs: 'Zvukové scenérie' },
     nav_chillout: { en: 'Chillout Music', cs: 'Chillout hudba' },
     nav_why: { en: 'Why RelaxPlayer', cs: 'Proč RelaxPlayer' },
+    nav_toolkit: { en: 'Tools &amp; Extras', cs: 'Nástroje a doplňky' },
     nav_articles: { en: 'Articles', cs: 'Články' },
     nav_faq: { en: 'FAQ', cs: 'Časté dotazy' },
     nav_launch: { en: 'Launch the player →', cs: 'Spustit přehrávač →' },
@@ -560,14 +676,14 @@
     chillout_heading: { en: 'Chillout music on RelaxPlayer', cs: 'Chillout hudba na RelaxPlayeru' },
     chillout_lead: { en: 'Alongside ambient, ASMR and piano, RelaxPlayer runs a steady rotation of chillout tracks — the downtempo, lounge-adjacent sound built for easy.', cs: 'Vedle ambientu, ASMR a klavíru běží na RelaxPlayeru i stálá rotace chillout skladeb — pomalejší, lounge zvuk stvořený pro pohodu.' },
     chillout_1_h: { en: 'What chillout means here', cs: 'Co zde znamená chillout' },
-    chillout_1_p: { en: 'Downtempo beats, warm synth textures and laid-back grooves, sitting somewhere between ambient and lounge — present enough to notice, relaxed enough to fade into the background.', cs: 'Pomalé beaty, teplé syntezátorové textury a uvolněné groovy, které leží někde mezi ambientem a lounge — dost výrazné, aby si jich všimnete, ale dost uvolněné, aby splynuly s pozadím.' },
+    chillout_1_p: { en: 'Downtempo beats, warm synth textures and laid-back grooves, sitting somewhere between ambient and lounge — present enough to notice, relaxed enough to fade into the background.', cs: 'Pomalé beaty, teplé syntezátorové textury a uvolněné groovy, které leží někde mezi ambientem a lounge — dost výrazné, abyste si jich všimli, ale dost uvolněné, aby splynuly s pozadím.' },
     chillout_2_h: { en: 'When people reach for it', cs: 'Kdy po něm lidé sáhnou' },
     chillout_2_p: { en: 'Chillout suits moments that need a little more rhythm than pure ambient — cooking, unwinding after work, a slow evening at home, or a calm start to the day.', cs: 'Chillout se hodí pro chvíle, které potřebují trochu více rytmu než čistý ambient — vaření, odpočinek po práci, pomalý večer doma nebo klidný začátek dne.' },
     chillout_3_h: { en: 'How it fits the rotation', cs: 'Jak zapadá do rotace' },
     chillout_3_p: { en: "The chillout tracks sit inside RelaxPlayer's main 24/7 stream, so they surface naturally between ambient and synth pieces rather than needing a separate playlist.", cs: 'Chillout skladby jsou součástí hlavního nepřetržitého proudu RelaxPlayeru, takže se přirozeně objevují mezi ambientními a syntezátorovými skladbami, aniž by potřebovaly samostatný playlist.' },
 
     why_heading: { en: 'Why people keep RelaxPlayer open', cs: 'Proč lidé nechávají RelaxPlayer otevřený' },
-    why_lead: { en: 'Built to disappear into the background, not demand attention.', cs: 'Vytvořeno tak, aby zmizel v pozadí, ne aby si vyžadoval pozornost.' },
+    why_lead: { en: 'Built to disappear into the background, not demand attention.', cs: 'Vytvořen tak, aby zmizel v pozadí, ne aby vyžadoval pozornost.' },
     why_1_h: { en: 'Truly 24/7', cs: 'Opravdu 24/7' },
     why_1_p: { en: 'The stream never stops. Come back at any hour and there is always something playing.', cs: 'Proud se nikdy nezastaví. Vraťte se v kteroukoli hodinu a vždy něco hraje.' },
     why_2_h: { en: 'No sign-up, ever', cs: 'Žádná registrace, nikdy' },
@@ -580,6 +696,23 @@
     why_5_p: { en: 'Keep the display awake during long focus or sleep sessions, so playback controls stay reachable.', cs: 'Udržujte displej aktivní během dlouhého soustředění nebo spánku, aby ovládání přehrávání zůstalo dostupné.' },
     why_6_h: { en: 'Shuffle or stay put', cs: 'Náhodné přehrávání nebo setrvání' },
     why_6_p: { en: 'Let tracks shuffle automatically, or repeat a single soundscape when you find the one that fits.', cs: 'Nechte skladby přehrávat náhodně, nebo opakujte jednu zvukovou scenérii, když najdete tu, která vám sedí.' },
+
+    toolkit_heading: { en: 'More than a player', cs: 'Víc než jen přehrávač' },
+    toolkit_lead: { en: 'Alongside the 24/7 stream, RelaxPlayer bundles a few small tools for making the sound your own.', cs: 'Vedle nepřetržitého proudu nabízí RelaxPlayer i pár drobných nástrojů, díky kterým si zvuk přizpůsobíte sami sobě.' },
+    toolkit_1_h: { en: 'Your own playlists', cs: 'Vlastní playlisty' },
+    toolkit_1_p: { en: 'Upload your own audio files and mix them with RelaxPlayer tracks into personal playlists you can come back to any time.', cs: 'Nahrajte si vlastní zvukové soubory a namixujte si je se skladbami RelaxPlayeru do osobních playlistů, ke kterým se kdykoli vrátíte.' },
+    toolkit_2_h: { en: 'Offline download', cs: 'Stažení offline' },
+    toolkit_2_p: { en: 'Download the current playlist to your device and keep listening even without an internet connection.', cs: 'Stáhněte si aktuální playlist do zařízení a poslouchejte dál i bez připojení k internetu.' },
+    toolkit_3_h: { en: 'Card of the day', cs: 'Karta dne' },
+    toolkit_3_p: { en: 'Draw a small daily tarot-style card for a short, reflective pause alongside the music — no account needed.', cs: 'Vytáhněte si malou denní kartu v tarotovém stylu pro krátkou chvíli zamyšlení u hudby — bez nutnosti účtu.' },
+    toolkit_4_h: { en: 'Guided breathing', cs: 'Řízené dýchání' },
+    toolkit_4_p: { en: 'Choose from several guided breathing techniques, including 4-7-8, box and coherent breathing, with a pulsing visual guide to follow.', cs: 'Vyberte si z několika technik řízeného dýchání, například 4-7-8, box breathing nebo koherentní dýchání, s pulzujícím vizuálním průvodcem.' },
+    toolkit_5_h: { en: 'Gentle reminders', cs: 'Jemné připomínky' },
+    toolkit_5_p: { en: 'Turn on local reminders that nudge you to pause and breathe every 15 minutes to 4 hours — nothing is ever sent to a server.', cs: 'Zapněte si místní připomínky, které vás pobídnou k zastavení a nádechu každých 15 minut až 4 hodiny — nic se přitom neodesílá na žádný server.' },
+    toolkit_6_h: { en: 'Levels &amp; progress', cs: 'Úrovně a postup' },
+    toolkit_6_p: { en: 'Build a simple listening streak that grows into levels and experience points, tracked entirely in your own browser.', cs: 'Budujte si jednoduchou sérii poslechů, která postupně roste do úrovní a zkušenostních bodů sledovaných pouze ve vašem prohlížeči.' },
+    toolkit_7_h: { en: 'Community chat', cs: 'Komunitní chat' },
+    toolkit_7_p: { en: 'Drop a few words into a light community chat and see reactions from other people listening right now.', cs: 'Napište pár slov do jednoduchého komunitního chatu a sledujte reakce ostatních lidí, kteří právě poslouchají.' },
 
     articles_heading: { en: 'Notes on sound, focus &amp; rest', cs: 'Poznámky o zvuku, soustředění a odpočinku' },
     articles_lead: { en: 'A few short reads on how background sound is typically used for relaxation, sleep and concentration.', cs: 'Několik krátkých textů o tom, jak se zvuk na pozadí obvykle využívá pro relaxaci, spánek a koncentraci.' },
@@ -613,6 +746,16 @@
     faq_4_a: { en: 'Yes. Many listeners keep RelaxPlayer running in the background while studying, working or falling asleep. You can pick a calmer soundscape like rain or piano for sleep, or a steadier ambient track for focus.', cs: 'Ano. Mnoho posluchačů nechává RelaxPlayer běžet na pozadí při studiu, práci nebo usínání. Pro spánek si můžete vybrat klidnější scenérii jako déšť nebo klavír, nebo stálejší ambientní skladbu pro soustředění.' },
     faq_5_q: { en: 'Does RelaxPlayer work on mobile phones?', cs: 'Funguje RelaxPlayer na mobilních telefonech?' },
     faq_5_a: { en: 'Yes, the player is fully responsive and works on phones, tablets and desktop computers, with a screen-on option so playback controls stay visible during long sessions.', cs: 'Ano, přehrávač je plně responzivní a funguje na telefonech, tabletech i počítačích, s možností udržení obrazovky, aby ovládání přehrávání zůstalo viditelné i při dlouhém poslechu.' },
+    faq_6_q: { en: 'Can I upload my own tracks and build custom playlists?', cs: 'Mohu si nahrát vlastní skladby a vytvořit vlastní playlisty?' },
+    faq_6_a: { en: 'Yes. The My Files section lets you upload your own audio and combine it with SYNTHLUCIDA tracks into playlists that stay saved in your browser.', cs: 'Ano. Sekce Moje soubory umožňuje nahrát vlastní zvukové soubory a kombinovat je se skladbami SYNTHLUCIDA do playlistů, které zůstanou uložené ve vašem prohlížeči.' },
+    faq_7_q: { en: 'Can I listen to RelaxPlayer offline?', cs: 'Mohu RelaxPlayer poslouchat offline?' },
+    faq_7_a: { en: 'Yes. The Download Offline button saves the current playlist to your device, so you can keep listening without an internet connection.', cs: 'Ano. Tlačítko Stáhnout offline uloží aktuální playlist do vašeho zařízení, takže můžete poslouchat i bez připojení k internetu.' },
+    faq_8_q: { en: 'What breathing techniques does RelaxPlayer offer?', cs: 'Jaké dechové techniky RelaxPlayer nabízí?' },
+    faq_8_a: { en: 'RelaxPlayer includes several guided techniques, such as 4-7-8, box, coherent, calming and sigh breathing, each shown as a pulsing visual guide you can follow.', cs: 'RelaxPlayer obsahuje několik řízených technik, například 4-7-8, box breathing, koherentní dýchání, zklidňující dýchání nebo povzdech, vždy zobrazených jako pulzující vizuální průvodce.' },
+    faq_9_q: { en: 'What is the Card of the Day feature?', cs: 'Co je funkce Karta dne?' },
+    faq_9_a: { en: 'It is a small daily tarot-style card, linked from the player, for a short moment of reflection alongside the music. No account or sign-up is required.', cs: 'Jde o malou denní kartu v tarotovém stylu, dostupnou z přehrávače, pro krátkou chvíli zamyšlení u hudby. Není potřeba žádný účet ani registrace.' },
+    faq_10_q: { en: 'Can I chat with other listeners?', cs: 'Mohu si psát s ostatními posluchači?' },
+    faq_10_a: { en: 'Yes. A light community chat lets you share a short message and see reactions from other people listening at the same time, alongside your own listening streak and levels.', cs: 'Ano. Jednoduchý komunitní chat umožňuje napsat krátkou zprávu a vidět reakce ostatních lidí, kteří poslouchají ve stejnou chvíli, spolu s vaší vlastní sérií poslechů a úrovněmi.' },
 
     foot_tagline: { en: 'Free 24/7 ambient, ASMR, piano &amp; chillout streaming — no sign-up, no cost.', cs: 'Bezplatné nepřetržité ambientní, ASMR, klavírní a chillout vysílání — bez registrace, bez poplatků.' },
     foot_launch: { en: 'Launch player', cs: 'Spustit přehrávač' },
