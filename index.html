@@ -323,6 +323,9 @@
   footer { border-top: 1px solid var(--line); padding: 30px 20px 40px; text-align: center; font-size: 12px; opacity: 0.55; }
   footer a { color: var(--ink-dim); }
   footer .foot-brand { font-family: 'Orbitron', sans-serif; letter-spacing: 3px; font-size: 13px; opacity: 0.85; margin-bottom: 10px; }
+  footer .foot-logo-link { display: inline-block; margin-bottom: 14px; }
+  footer .foot-logo { width: 56px; height: 56px; border-radius: 50%; display: block; opacity: 0.9; transition: opacity 0.2s ease; }
+  footer .foot-logo-link:hover .foot-logo { opacity: 1; }
   footer .foot-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 12px 0; }
 
   @media (max-width: 640px) {
@@ -560,6 +563,16 @@
         <h3 data-i18n="art_6_h">Keeping a session going without breaking focus</h3>
         <p data-i18n="art_6_p">Small interruptions — a screen that locks, a tab that needs reopening — can undo the effect of a long focus or wind-down session. That is the reasoning behind features like screen-on mode: removing the small frictions that would otherwise pull attention back to the phone or laptop itself.</p>
       </article>
+      <article class="post">
+        <span class="tag" data-i18n="art_7_tag">BREATHING</span>
+        <h3 data-i18n="art_7_h">Pairing guided breathing with ambient sound</h3>
+        <p data-i18n="art_7_p">A short breathing exercise — inhaling for a count, holding, then exhaling slowly — can give restless attention something concrete to follow. Layering it over a steady ambient or piano track adds a rhythm to settle into without requiring active listening. Techniques like 4-7-8 or box breathing are simple enough to try for just a few minutes between tasks or before sleep.</p>
+      </article>
+      <article class="post">
+        <span class="tag" data-i18n="art_8_tag">DESIGN</span>
+        <h3 data-i18n="art_8_h">Why a calm visual theme matters as much as the sound</h3>
+        <p data-i18n="art_8_p">What is on screen while music plays can shape how relaxing a session feels, even for someone not actively looking at it. A bright, busy interface with strong contrast can work against a calm soundscape, while a darker, low-contrast theme tends to sit more quietly in the background. That is one reason RelaxPlayer offers a range of visual themes, including sunset and night sky modes, so the screen can match the mood of the sound.</p>
+      </article>
     </div>
   </section>
 
@@ -611,6 +624,9 @@
 </main>
 
 <footer>
+  <a class="foot-logo-link" href="https://synthlucida.com" target="_blank" rel="noopener" aria-label="SYNTHLUCIDA">
+    <img class="foot-logo" src="logo.jpg" alt="SYNTHLUCIDA logo" width="56" height="56" loading="lazy">
+  </a>
   <div class="foot-brand">RELAX<span style="color:var(--accent-a)">PLAYER</span></div>
   <div data-i18n="foot_tagline">Free 24/7 ambient, ASMR, piano &amp; chillout streaming — no sign-up, no cost.</div>
   <div class="foot-links">
@@ -734,6 +750,14 @@
     art_6_tag: { en: 'HABITS', cs: 'NÁVYKY' },
     art_6_h: { en: 'Keeping a session going without breaking focus', cs: 'Jak udržet sezení bez přerušení soustředění' },
     art_6_p: { en: 'Small interruptions — a screen that locks, a tab that needs reopening — can undo the effect of a long focus or wind-down session. That is the reasoning behind features like screen-on mode: removing the small frictions that would otherwise pull attention back to the phone or laptop itself.', cs: 'Malá přerušení — uzamčená obrazovka, karta, kterou je třeba znovu otevřít — dokážou zmařit efekt dlouhého soustředění nebo zklidňujícího sezení. To je důvod pro funkce jako režim udržení obrazovky: odstraňují drobné třecí plochy, které by jinak odváděly pozornost zpět k telefonu nebo notebooku.' },
+
+    art_7_tag: { en: 'BREATHING', cs: 'DÝCHÁNÍ' },
+    art_7_h: { en: 'Pairing guided breathing with ambient sound', cs: 'Jak spojit řízené dýchání s ambientním zvukem' },
+    art_7_p: { en: 'A short breathing exercise — inhaling for a count, holding, then exhaling slowly — can give restless attention something concrete to follow. Layering it over a steady ambient or piano track adds a rhythm to settle into without requiring active listening. Techniques like 4-7-8 or box breathing are simple enough to try for just a few minutes between tasks or before sleep.', cs: 'Krátké dechové cvičení — nádech na počet, zadržení dechu a pak pomalý výdech — dá neklidné pozornosti něco konkrétního, čeho se držet. Když se přidá ke stálé ambientní nebo klavírní skladbě, vznikne rytmus, do kterého se lze ponořit, aniž by bylo nutné hudbu aktivně poslouchat. Techniky jako 4-7-8 nebo box breathing jsou dost jednoduché na to, aby se daly vyzkoušet jen na pár minut mezi úkoly nebo před spaním.' },
+
+    art_8_tag: { en: 'DESIGN', cs: 'DESIGN' },
+    art_8_h: { en: 'Why a calm visual theme matters as much as the sound', cs: 'Proč je klidný vizuální motiv stejně důležitý jako zvuk' },
+    art_8_p: { en: 'What is on screen while music plays can shape how relaxing a session feels, even for someone not actively looking at it. A bright, busy interface with strong contrast can work against a calm soundscape, while a darker, low-contrast theme tends to sit more quietly in the background. That is one reason RelaxPlayer offers a range of visual themes, including sunset and night sky modes, so the screen can match the mood of the sound.', cs: 'To, co je na obrazovce při poslechu hudby, může ovlivnit, jak uklidňující se sezení zdá, i když se na displej nikdo aktivně nedívá. Jasné, rušné rozhraní se silným kontrastem může působit proti klidné zvukové scenérii, zatímco tmavší, nízkokontrastní motiv obvykle zůstává v pozadí nenápadněji. To je jeden z důvodů, proč RelaxPlayer nabízí řadu vizuálních motivů, včetně režimu západu slunce a nočního nebe, aby obrazovka mohla odpovídat náladě zvuku.' },
 
     faq_heading: { en: 'Frequently asked questions', cs: 'Časté dotazy' },
     faq_1_q: { en: 'Is RelaxPlayer really free?', cs: 'Je RelaxPlayer opravdu zdarma?' },
