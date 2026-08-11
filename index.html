@@ -406,7 +406,7 @@
   <a href="#toolkit" onclick="toggleSideNav(false)" data-i18n="nav_toolkit">Tools &amp; Extras</a>
   <a href="#articles" onclick="toggleSideNav(false)" data-i18n="nav_articles">Articles</a>
   <a href="#faq" onclick="toggleSideNav(false)" data-i18n="nav_faq">FAQ</a>
-  <a href="#contact" onclick="toggleSideNav(false)" data-i18n="nav_contact">Contact</a>
+  <a href="#contact" onclick="showContact(event)" data-i18n="nav_contact">Contact</a>
   <a href="https://synthlucida.com/player.html" data-i18n="nav_launch">Launch the player →</a>
   <div class="side-nav-cta" data-i18n="nav_cta">Free 24/7 ambient &amp; ASMR streaming, no sign-up required.</div>
 </nav>
@@ -673,7 +673,7 @@
     </div>
   </section>
 
-  <section class="content" id="contact" aria-labelledby="contact-heading">
+  <section class="content" id="contact" aria-labelledby="contact-heading" style="display:none;">
     <div class="contact-grid">
       <div class="contact-info">
         <h2 id="contact-heading" data-i18n="contact_heading">Get in touch</h2>
@@ -742,6 +742,14 @@
 </a>
 
 <script>
+  function showContact(e) {
+    if (e) e.preventDefault();
+    const contact = document.getElementById('contact');
+    contact.style.display = '';
+    toggleSideNav(false);
+    contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   function toggleSideNav(force) {
     const open = typeof force === 'boolean' ? force : !document.body.classList.contains('nav-open');
     document.body.classList.toggle('nav-open', open);
