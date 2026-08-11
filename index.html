@@ -260,6 +260,7 @@
   .side-nav-cta { margin-top: auto; font-size: 11px; opacity: 0.5; line-height: 1.6; }
 
   header.top-bar { display: flex; align-items: center; justify-content: center; padding: 26px 20px 4px; }
+  header.top-bar .brand { display: none; }
   .brand { font-size: 15px; letter-spacing: 4px; opacity: 0.9; }
   .brand .dot { color: var(--accent-a); text-shadow: 0 0 10px var(--accent-a); }
 
@@ -268,6 +269,7 @@
 
   .eyebrow { display: inline-block; font-size: 11px; letter-spacing: 3px; color: var(--accent-a); opacity: 0.9; margin-bottom: 14px; }
   .hero h1 { font-size: clamp(30px, 6.5vw, 48px); letter-spacing: 2px; margin: 4px 0 14px; text-shadow: 0 0 26px rgba(0,229,199,0.35); }
+  .hero h1 .dot { color: var(--accent-a); text-shadow: 0 0 10px var(--accent-a); }
   .hero .subtitle { font-size: clamp(14px, 3vw, 17px); line-height: 1.75; opacity: 0.82; margin: 0 auto 30px; max-width: 540px; font-weight: 300; }
 
   .cta-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
@@ -289,6 +291,9 @@
   section.content { padding: 46px 0; border-top: 1px solid var(--line); }
   section.content h2 { font-size: clamp(20px, 3.4vw, 27px); letter-spacing: 1px; margin: 0 0 8px; }
   .section-lead { opacity: 0.72; font-size: 14.5px; line-height: 1.75; max-width: 640px; margin: 0 0 30px; font-weight: 300; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; margin: 0 0 22px; font-family: inherit; font-size: 13.5px; font-weight: 500; letter-spacing: 0.02em; color: var(--accent-a); opacity: 0.85; cursor: pointer; }
+  .back-link:hover { opacity: 1; text-decoration: underline; }
+  .back-link svg { width: 16px; height: 16px; }
 
   /* Steps */
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
@@ -401,12 +406,12 @@
   <div class="side-nav-brand">RELAX<span class="dot">PLAYER</span></div>
   <a href="#how" onclick="toggleSideNav(false)" data-i18n="nav_how">How it works</a>
   <a href="#sounds" onclick="toggleSideNav(false)" data-i18n="nav_sounds">Soundscapes</a>
-  <a href="#chillout" onclick="toggleSideNav(false)" data-i18n="nav_chillout">Chillout Music</a>
-  <a href="#why" onclick="toggleSideNav(false)" data-i18n="nav_why">Why RelaxPlayer</a>
-  <a href="#toolkit" onclick="toggleSideNav(false)" data-i18n="nav_toolkit">Tools &amp; Extras</a>
-  <a href="#articles" onclick="toggleSideNav(false)" data-i18n="nav_articles">Articles</a>
-  <a href="#faq" onclick="toggleSideNav(false)" data-i18n="nav_faq">FAQ</a>
-  <a href="#contact" onclick="showContact(event)" data-i18n="nav_contact">Contact</a>
+  <a href="#chillout" onclick="showSection('chillout', event)" data-i18n="nav_chillout">Chillout Music</a>
+  <a href="#why" onclick="showSection('why', event)" data-i18n="nav_why">Why RelaxPlayer</a>
+  <a href="#toolkit" onclick="showSection('toolkit', event)" data-i18n="nav_toolkit">Tools &amp; Extras</a>
+  <a href="#articles" onclick="showSection('articles', event)" data-i18n="nav_articles">Articles</a>
+  <a href="#faq" onclick="showSection('faq', event)" data-i18n="nav_faq">FAQ</a>
+  <a href="#contact" onclick="showSection('contact', event)" data-i18n="nav_contact">Contact</a>
   <a href="https://synthlucida.com/player.html" data-i18n="nav_launch">Launch the player →</a>
   <div class="side-nav-cta" data-i18n="nav_cta">Free 24/7 ambient &amp; ASMR streaming, no sign-up required.</div>
 </nav>
@@ -418,7 +423,7 @@
 <main>
   <section class="hero" id="top">
     <span class="eyebrow" data-i18n="hero_eyebrow">FREE · 24/7 · NO SIGN-UP</span>
-    <h1>RelaxPlayer</h1>
+    <h1>Relax<span class="dot">Player</span></h1>
     <p class="subtitle" data-i18n="hero_subtitle">A continuous stream of ambient, ASMR and piano sound, built for focus, deep relaxation and sleep. Press play and let it run in the background — free, forever, right in your browser.</p>
     <div class="cta-row">
       <a class="cta-btn" href="https://synthlucida.com/player.html">
@@ -473,13 +478,17 @@
       </div>
       <div class="card">
         <span class="icon">🌙</span>
-        <h3 data-i18n="sounds_4_h">Sleep Rotation</h3>
-        <p data-i18n="sounds_4_p">Lower-energy tracks the player favours in the evening, designed to fade into the background as you drift off.</p>
+        <h3 data-i18n="sounds_4_h">Sleep-Friendly Sounds</h3>
+        <p data-i18n="sounds_4_p">A calmer mix of ambient, ASMR, piano and chillout tracks well suited for falling asleep — pick this mood any time, day or night.</p>
       </div>
     </div>
   </section>
 
-  <section class="content" id="chillout" aria-labelledby="chillout-heading">
+  <section class="content toggle-section" id="chillout" aria-labelledby="chillout-heading" style="display:none;">
+    <button type="button" class="back-link" onclick="hideSection('chillout')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <span data-i18n="back_link">Back</span>
+    </button>
     <h2 id="chillout-heading" data-i18n="chillout_heading">Chillout music on RelaxPlayer</h2>
     <p class="section-lead" data-i18n="chillout_lead">Alongside ambient, ASMR and piano, RelaxPlayer runs a steady rotation of chillout tracks — the downtempo, lounge-adjacent sound built for easy.</p>
     <div class="grid">
@@ -501,7 +510,11 @@
     </div>
   </section>
 
-  <section class="content" id="why" aria-labelledby="why-heading">
+  <section class="content toggle-section" id="why" aria-labelledby="why-heading" style="display:none;">
+    <button type="button" class="back-link" onclick="hideSection('why')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <span data-i18n="back_link">Back</span>
+    </button>
     <h2 id="why-heading" data-i18n="why_heading">Why people keep RelaxPlayer open</h2>
     <p class="section-lead" data-i18n="why_lead">Built to disappear into the background, not demand attention.</p>
     <div class="grid">
@@ -538,7 +551,11 @@
     </div>
   </section>
 
-  <section class="content" id="toolkit" aria-labelledby="toolkit-heading">
+  <section class="content toggle-section" id="toolkit" aria-labelledby="toolkit-heading" style="display:none;">
+    <button type="button" class="back-link" onclick="hideSection('toolkit')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <span data-i18n="back_link">Back</span>
+    </button>
     <h2 id="toolkit-heading" data-i18n="toolkit_heading">More than a player</h2>
     <p class="section-lead" data-i18n="toolkit_lead">Alongside the 24/7 stream, RelaxPlayer bundles a few small tools for making the sound your own.</p>
     <div class="grid">
@@ -580,7 +597,11 @@
     </div>
   </section>
 
-  <section class="content" id="articles" aria-labelledby="articles-heading">
+  <section class="content toggle-section" id="articles" aria-labelledby="articles-heading" style="display:none;">
+    <button type="button" class="back-link" onclick="hideSection('articles')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <span data-i18n="back_link">Back</span>
+    </button>
     <h2 id="articles-heading" data-i18n="articles_heading">Notes on sound, focus &amp; rest</h2>
     <p class="section-lead" data-i18n="articles_lead">A few short reads on how background sound is typically used for relaxation, sleep and concentration.</p>
     <div class="articles">
@@ -627,7 +648,11 @@
     </div>
   </section>
 
-  <section class="content" id="faq" aria-labelledby="faq-heading">
+  <section class="content toggle-section" id="faq" aria-labelledby="faq-heading" style="display:none;">
+    <button type="button" class="back-link" onclick="hideSection('faq')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <span data-i18n="back_link">Back</span>
+    </button>
     <h2 id="faq-heading" data-i18n="faq_heading">Frequently asked questions</h2>
     <div class="faq-list">
       <details class="faq-item">
@@ -673,7 +698,11 @@
     </div>
   </section>
 
-  <section class="content" id="contact" aria-labelledby="contact-heading" style="display:none;">
+  <section class="content toggle-section" id="contact" aria-labelledby="contact-heading" style="display:none;">
+    <button type="button" class="back-link" onclick="hideSection('contact')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <span data-i18n="back_link">Back</span>
+    </button>
     <div class="contact-grid">
       <div class="contact-info">
         <h2 id="contact-heading" data-i18n="contact_heading">Get in touch</h2>
@@ -730,7 +759,6 @@
   <div class="foot-brand">RELAX<span style="color:var(--accent-a)">PLAYER</span></div>
   <div data-i18n="foot_tagline">Free 24/7 ambient, ASMR, piano &amp; chillout streaming — no sign-up, no cost.</div>
   <div class="foot-links">
-    <a href="https://synthlucida.com/player.html" data-i18n="foot_launch">Launch player</a>
     <a href="https://synthlucida.com" target="_blank" rel="noopener">SYNTHLUCIDA</a>
     <a href="privacy.html" data-i18n="foot_privacy">Privacy &amp; cookies</a>
   </div>
@@ -742,12 +770,20 @@
 </a>
 
 <script>
-  function showContact(e) {
+  function showSection(id, e) {
     if (e) e.preventDefault();
-    const contact = document.getElementById('contact');
-    contact.style.display = '';
+    document.querySelectorAll('.toggle-section').forEach(s => {
+      if (s.id !== id) s.style.display = 'none';
+    });
+    const target = document.getElementById(id);
+    target.style.display = '';
     toggleSideNav(false);
-    contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function hideSection(id) {
+    document.getElementById(id).style.display = 'none';
+    document.getElementById('top').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function toggleSideNav(force) {
@@ -756,6 +792,13 @@
     document.getElementById('menu-toggle').setAttribute('aria-expanded', String(open));
   }
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function openFromHash() {
+    const id = window.location.hash.replace('#', '');
+    if (id && document.getElementById(id) && document.getElementById(id).classList.contains('toggle-section')) {
+      showSection(id);
+    }
+  })();
 
   (function backToTop() {
     const btn = document.getElementById('back-to-top');
@@ -774,6 +817,7 @@
   /* ---------- i18n (EN / CS) ---------- */
   const i18n = {
     menu_toggle_aria: { en: 'Open menu', cs: 'Otevřít menu' },
+    back_link: { en: 'Back', cs: 'Zpět' },
     nav_how: { en: 'How it works', cs: 'Jak to funguje' },
     nav_sounds: { en: 'Soundscapes', cs: 'Zvukové scenérie' },
     nav_chillout: { en: 'Chillout Music', cs: 'Chillout hudba' },
@@ -807,8 +851,8 @@
     sounds_2_p: { en: 'Soft, unhurried piano pieces with plenty of space between the notes — gentle background for reading or resting.', cs: 'Jemné, nespěchané klavírní skladby s dostatkem prostoru mezi tóny — jemné pozadí pro čtení nebo odpočinek.' },
     sounds_3_h: { en: 'Deep Ambient &amp; Synth', cs: 'Hluboký ambient a syntezátory' },
     sounds_3_p: { en: 'Slow-moving synth pads and atmospheric tones for long focus blocks or late-night sessions.', cs: 'Pomalu plynoucí syntezátorové plochy a atmosférické tóny pro dlouhé bloky soustředění nebo pozdní noční sezení.' },
-    sounds_4_h: { en: 'Sleep Rotation', cs: 'Spánková rotace' },
-    sounds_4_p: { en: 'Lower-energy tracks the player favours in the evening, designed to fade into the background as you drift off.', cs: 'Klidnější skladby, které přehrávač preferuje večer, navržené tak, aby se vytratily do pozadí, když usínáte.' },
+    sounds_4_h: { en: 'Sleep-Friendly Sounds', cs: 'Zvuky vhodné na spaní' },
+    sounds_4_p: { en: 'A calmer mix of ambient, ASMR, piano and chillout tracks well suited for falling asleep — pick this mood any time, day or night.', cs: 'Klidnější mix ambientních, ASMR, klavírních a chillout skladeb, které se hodí k usínání — tuhle náladu si můžeš pustit kdykoli, ve dne i v noci.' },
 
     chillout_heading: { en: 'Chillout music on RelaxPlayer', cs: 'Chillout hudba na RelaxPlayeru' },
     chillout_lead: { en: 'Alongside ambient, ASMR and piano, RelaxPlayer runs a steady rotation of chillout tracks — the downtempo, lounge-adjacent sound built for easy.', cs: 'Vedle ambientu, ASMR a klavíru běží na RelaxPlayeru i stálá rotace chillout skladeb — pomalejší, lounge zvuk stvořený pro pohodu.' },
@@ -919,7 +963,6 @@
     contact_send_another: { en: 'Send another message', cs: 'Odeslat další zprávu' },
 
     foot_tagline: { en: 'Free 24/7 ambient, ASMR, piano &amp; chillout streaming — no sign-up, no cost.', cs: 'Bezplatné nepřetržité ambientní, ASMR, klavírní a chillout vysílání — bez registrace, bez poplatků.' },
-    foot_launch: { en: 'Launch player', cs: 'Spustit přehrávač' },
     foot_privacy: { en: 'Privacy &amp; cookies', cs: 'Ochrana osobních údajů' },
     foot_copyright_prefix: { en: '©', cs: '©' },
     foot_copyright_suffix: { en: 'RelaxPlayer · SYNTHLUCIDA project', cs: 'RelaxPlayer · projekt SYNTHLUCIDA' },
