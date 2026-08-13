@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'relaxplayer-v14';
+const CACHE_VERSION = 'relaxplayer-v15';
 const CORE_ASSETS = [
   '/',
   '/index.html',
