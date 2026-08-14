@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'relaxplayer-v15';
+const CACHE_VERSION = 'relaxplayer-v16';
 const CORE_ASSETS = [
   '/',
   '/index.html',
@@ -30,11 +30,32 @@ self.addEventListener('fetch', (event) => {
   const req = event.request;
 
   // Only handle same-origin GET requests; let everything else (fonts, the
-  // player on another domain, POSTs, etc.) go straight to the network.
+  // player on another domain, POSTs, ad scripts, etc.) go straight to the network.
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) {
     return;
   }
 
+  // HTML / navigation requests: network-first, so updates to the page show up
+  // immediately. Falls back to the cached copy only when offline.
+  if (req.mode === 'navigate' || req.destination === 'document') {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          if (res && res.status === 200) {
+            const copy = res.clone();
+            caches.open(CACHE_VERSION).then((cache) => cache.put(req, copy));
+          }
+          return res;
+        })
+        .catch(() => caches.match(req).then((cached) => cached || caches.match('/index.html')))
+    );
+    return;
+  }
+
+  // Everything else (images, JS, CSS, icons, etc.): cache-first for speed,
+  // automatically saving every new same-origin asset it sees so the site
+  // keeps building up its offline cache as it's used, with a background
+  // network refresh to keep the cache up to date.
   event.respondWith(
     caches.match(req).then((cached) => {
       const network = fetch(req)
