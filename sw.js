@@ -1,7 +1,13 @@
-const CACHE_VERSION = 'relaxplayer-v16';
+const CACHE_VERSION = 'relaxplayer-v17';
 const CORE_ASSETS = [
   '/',
   '/index.html',
+  '/chillout.html',
+  '/why-relaxplayer.html',
+  '/features.html',
+  '/articles.html',
+  '/faq.html',
+  '/contact.html',
   '/manifest.json',
   '/favicon-16.png',
   '/favicon-32.png',
