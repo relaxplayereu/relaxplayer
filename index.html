@@ -344,7 +344,8 @@
 </button>
 <div class="nav-scrim" id="nav-scrim" onclick="toggleSideNav(false)"></div>
 <nav class="side-nav" id="side-nav" aria-label="Main navigation">
-  <div class="side-nav-brand">RELAX<span class="dot">PLAYER</span></div>
+  <a class="side-nav-brand" href="index.html" onclick="toggleSideNav(false)" style="text-decoration:none; color:inherit; display:block;">RELAX<span class="dot">PLAYER</span></a>
+  <a href="index.html" onclick="toggleSideNav(false)" data-i18n="nav_home">Home</a>
   <a href="#how" onclick="toggleSideNav(false)" data-i18n="nav_how">How it works</a>
   <a href="#sounds" onclick="toggleSideNav(false)" data-i18n="nav_sounds">Soundscapes</a>
   <a href="chillout.html" onclick="showSection('chillout', event)" data-i18n="nav_chillout">Chillout Music</a>
@@ -359,7 +360,7 @@
 </nav>
 
 <header class="top-bar">
-  <div class="brand">RELAX<span class="dot">PLAYER</span></div>
+  <a class="brand" href="index.html" style="text-decoration:none; color:inherit;">RELAX<span class="dot">PLAYER</span></a>
 </header>
 
 <main>
@@ -790,6 +791,7 @@
   const i18n = {
     menu_toggle_aria: { en: 'Open menu', cs: 'Otevřít menu' },
     back_link: { en: 'Back', cs: 'Zpět' },
+    nav_home: { en: 'Home', cs: 'Domů' },
     nav_how: { en: 'How it works', cs: 'Jak to funguje' },
     nav_sounds: { en: 'Soundscapes', cs: 'Zvukové scenérie' },
     nav_chillout: { en: 'Chillout Music', cs: 'Chillout hudba' },
