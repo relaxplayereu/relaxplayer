@@ -173,8 +173,9 @@
   body.nav-open .nav-scrim { opacity: 1; pointer-events: auto; }
   .side-nav-brand { font-family: 'Orbitron', sans-serif; font-size: 15px; letter-spacing: 3px; margin-bottom: 10px; }
   .side-nav-brand .dot { color: var(--accent-a); }
-  .side-nav a { color: var(--ink); text-decoration: none; font-size: 14px; opacity: 0.85; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .side-nav a { color: var(--ink); text-decoration: none; font-size: 14px; opacity: 0.85; padding: 6px 0 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); border-left: 2px solid transparent; transition: 0.2s; }
   .side-nav a:hover { opacity: 1; color: var(--accent-a); }
+  .side-nav a.active { opacity: 1; color: var(--accent-a); border-left-color: var(--accent-a); background: rgba(0,229,199,0.08); font-weight: 600; }
   .side-nav-cta { margin-top: auto; font-size: 11px; opacity: 0.5; line-height: 1.6; }
 
   header.top-bar { display: flex; align-items: center; justify-content: center; padding: 26px 20px 4px; }
@@ -755,11 +756,34 @@
     target.style.display = '';
     toggleSideNav(false);
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
+    updateActiveNav();
   }
 
   function hideSection(id) {
     document.getElementById(id).style.display = 'none';
     document.getElementById('top').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (history.replaceState) history.replaceState(null, '', location.pathname);
+    updateActiveNav();
+  }
+
+  function updateActiveNav() {
+    const path = location.pathname.split('/').pop() || 'index.html';
+    const hash = location.hash;
+    document.querySelectorAll('.side-nav a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('http')) { a.classList.remove('active'); return; }
+      const [hrefFileRaw, hrefHashRaw] = href.split('#');
+      const hrefFile = hrefFileRaw || 'index.html';
+      const hrefHash = hrefHashRaw ? '#' + hrefHashRaw : '';
+      let active;
+      if (hrefHash) {
+        active = hrefFile === path && hrefHash === hash;
+      } else {
+        active = hrefFile === path && (hash === '' || hash === '#top');
+      }
+      a.classList.toggle('active', active);
+    });
   }
 
   function toggleSideNav(force) {
@@ -773,8 +797,11 @@
     const id = window.location.hash.replace('#', '');
     if (id && document.getElementById(id) && document.getElementById(id).classList.contains('toggle-section')) {
       showSection(id);
+    } else {
+      updateActiveNav();
     }
   })();
+  window.addEventListener('hashchange', updateActiveNav);
 
   (function backToTop() {
     const btn = document.getElementById('back-to-top');
