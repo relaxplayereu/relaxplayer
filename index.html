@@ -352,12 +352,12 @@
   <a href="index.html" onclick="toggleSideNav(false)" data-i18n="nav_home">Home</a>
   <a href="#how" onclick="toggleSideNav(false)" data-i18n="nav_how">How it works</a>
   <a href="#sounds" onclick="toggleSideNav(false)" data-i18n="nav_sounds">Soundscapes</a>
-  <a href="chillout.html" onclick="showSection('chillout', event)" data-i18n="nav_chillout">Chillout Music</a>
-  <a href="why-relaxplayer.html" onclick="showSection('why', event)" data-i18n="nav_why">Why RelaxPlayer</a>
-  <a href="features.html" onclick="showSection('toolkit', event)" data-i18n="nav_toolkit">Tools &amp; Extras</a>
-  <a href="articles.html" onclick="showSection('articles', event)" data-i18n="nav_articles">Articles</a>
-  <a href="faq.html" onclick="showSection('faq', event)" data-i18n="nav_faq">FAQ</a>
-  <a href="contact.html" onclick="showSection('contact', event)" data-i18n="nav_contact">Contact</a>
+  <a href="chillout.html" data-section="chillout" onclick="showSection('chillout', event)" data-i18n="nav_chillout">Chillout Music</a>
+  <a href="why-relaxplayer.html" data-section="why" onclick="showSection('why', event)" data-i18n="nav_why">Why RelaxPlayer</a>
+  <a href="features.html" data-section="toolkit" onclick="showSection('toolkit', event)" data-i18n="nav_toolkit">Tools &amp; Extras</a>
+  <a href="articles.html" data-section="articles" onclick="showSection('articles', event)" data-i18n="nav_articles">Articles</a>
+  <a href="faq.html" data-section="faq" onclick="showSection('faq', event)" data-i18n="nav_faq">FAQ</a>
+  <a href="contact.html" data-section="contact" onclick="showSection('contact', event)" data-i18n="nav_contact">Contact</a>
   <a href="https://uklidnito.eu" target="_blank" rel="noopener" data-i18n="nav_uklidnito" data-i18n-title="nav_uklidnito_title" title="Also by SYNTHLUCIDA: free guided breathing exercises">Uklidni To – breathing exercises</a>
   <a href="https://synthlucida.com/player.html" data-i18n="nav_launch">Launch the player →</a>
   <div class="side-nav-cta" data-i18n="nav_cta">Free 24/7 ambient &amp; ASMR streaming, no sign-up required.</div>
@@ -773,14 +773,22 @@
     document.querySelectorAll('.side-nav a[href]').forEach(a => {
       const href = a.getAttribute('href');
       if (!href || href.startsWith('http')) { a.classList.remove('active'); return; }
-      const [hrefFileRaw, hrefHashRaw] = href.split('#');
-      const hrefFile = hrefFileRaw || 'index.html';
-      const hrefHash = hrefHashRaw ? '#' + hrefHashRaw : '';
+      const section = a.getAttribute('data-section');
       let active;
-      if (hrefHash) {
-        active = hrefFile === path && hrefHash === hash;
+      if (section) {
+        // These links point to separate SEO-only files (e.g. chillout.html)
+        // but actually just show a same-page section via showSection(), so
+        // match on the current hash rather than on the href's file name.
+        active = path === 'index.html' && hash === '#' + section;
       } else {
-        active = hrefFile === path && (hash === '' || hash === '#top');
+        const [hrefFileRaw, hrefHashRaw] = href.split('#');
+        const hrefFile = hrefFileRaw || 'index.html';
+        const hrefHash = hrefHashRaw ? '#' + hrefHashRaw : '';
+        if (hrefHash) {
+          active = hrefFile === path && hrefHash === hash;
+        } else {
+          active = hrefFile === path && (hash === '' || hash === '#top');
+        }
       }
       a.classList.toggle('active', active);
     });
