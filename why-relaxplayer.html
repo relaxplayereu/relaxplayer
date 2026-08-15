@@ -11,6 +11,9 @@
 <meta name="author" content="SYNTHLUCIDA">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://relaxplayer.eu/why-relaxplayer.html">
+<link rel="alternate" hreflang="en" href="https://relaxplayer.eu/why-relaxplayer.html">
+<link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/why-relaxplayer-cs.html">
+<link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/why-relaxplayer.html">
 <meta id="meta-language" name="language" content="English">
 
 <!-- Open Graph -->
@@ -321,7 +324,7 @@
 </button>
 <div class="nav-scrim" id="nav-scrim" onclick="toggleSideNav(false)"></div>
 <nav class="side-nav" id="side-nav" aria-label="Main navigation">
-  <div class="side-nav-brand">RELAX<span class="dot">PLAYER</span></div>
+  <a class="side-nav-brand" href="index.html" onclick="toggleSideNav(false)" style="text-decoration:none; color:inherit; display:block;">RELAX<span class="dot">PLAYER</span></a>
   <a href="index.html" data-i18n="nav_home">RelaxPlayer home</a>
   <a href="index.html#how" data-i18n="nav_how">How it works</a>
   <a href="index.html#sounds" data-i18n="nav_sounds">Soundscapes</a>
@@ -548,19 +551,20 @@
     document.getElementById('twitter-description').setAttribute('content', m.ogDescription);
 
     document.getElementById('lang-toggle-label').textContent = lang === 'cs' ? 'EN' : 'CS';
-    try { localStorage.setItem('relaxplayer-lang', lang); } catch (e) { /* storage may be unavailable */ }
   }
 
   function toggleLang() {
     const current = document.documentElement.lang === 'cs' ? 'cs' : 'en';
-    applyLang(current === 'cs' ? 'en' : 'cs');
+    const hash = window.location.hash || '';
+    if (current === 'cs') {
+      window.location.href = 'https://relaxplayer.eu/why-relaxplayer.html' + hash;
+    } else {
+      window.location.href = 'https://relaxplayer.eu/why-relaxplayer-cs.html' + hash;
+    }
   }
 
   (function initLang() {
-    let saved = null;
-    try { saved = localStorage.getItem('relaxplayer-lang'); } catch (e) { /* storage may be unavailable */ }
-    const browserLang = (navigator.language || '').toLowerCase().startsWith('cs') ? 'cs' : 'en';
-    applyLang(saved || browserLang);
+    applyLang(document.documentElement.lang === 'cs' ? 'cs' : 'en');
   })();
 
 </script>

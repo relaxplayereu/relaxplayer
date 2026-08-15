@@ -1,13 +1,22 @@
-const CACHE_VERSION = 'relaxplayer-v18';
+const CACHE_VERSION = 'relaxplayer-v19';
 const CORE_ASSETS = [
   '/',
   '/index.html',
+  '/cs.html',
   '/chillout.html',
+  '/chillout-cs.html',
   '/why-relaxplayer.html',
+  '/why-relaxplayer-cs.html',
   '/features.html',
+  '/features-cs.html',
   '/articles.html',
+  '/articles-cs.html',
   '/faq.html',
+  '/faq-cs.html',
   '/contact.html',
+  '/contact-cs.html',
+  '/privacy.html',
+  '/privacy-cs.html',
   '/manifest.json',
   '/favicon-16.png',
   '/favicon-32.png',
@@ -53,7 +62,12 @@ self.addEventListener('fetch', (event) => {
           }
           return res;
         })
-        .catch(() => caches.match(req).then((cached) => cached || caches.match('/index.html')))
+        .catch(() => {
+          const isCs = new URL(req.url).pathname.includes('-cs.html') ||
+                       new URL(req.url).pathname === '/cs.html';
+          const fallback = isCs ? '/cs.html' : '/index.html';
+          return caches.match(req).then((cached) => cached || caches.match(fallback));
+        })
     );
     return;
   }

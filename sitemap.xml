@@ -1,51 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://relaxplayer.eu/</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/"/>
   </url>
+  <url>
+    <loc>https://relaxplayer.eu/cs.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/"/>
+  </url>
+
   <url>
     <loc>https://relaxplayer.eu/chillout.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/chillout.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/chillout-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/chillout.html"/>
   </url>
+  <url>
+    <loc>https://relaxplayer.eu/chillout-cs.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/chillout.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/chillout-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/chillout.html"/>
+  </url>
+
   <url>
     <loc>https://relaxplayer.eu/why-relaxplayer.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/why-relaxplayer.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/why-relaxplayer-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/why-relaxplayer.html"/>
   </url>
+  <url>
+    <loc>https://relaxplayer.eu/why-relaxplayer-cs.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/why-relaxplayer.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/why-relaxplayer-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/why-relaxplayer.html"/>
+  </url>
+
   <url>
     <loc>https://relaxplayer.eu/features.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/features.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/features-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/features.html"/>
   </url>
+  <url>
+    <loc>https://relaxplayer.eu/features-cs.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/features.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/features-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/features.html"/>
+  </url>
+
   <url>
     <loc>https://relaxplayer.eu/articles.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/articles.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/articles-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/articles.html"/>
   </url>
+  <url>
+    <loc>https://relaxplayer.eu/articles-cs.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/articles.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/articles-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/articles.html"/>
+  </url>
+
   <url>
     <loc>https://relaxplayer.eu/faq.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/faq-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/faq.html"/>
   </url>
+  <url>
+    <loc>https://relaxplayer.eu/faq-cs.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/faq-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/faq.html"/>
+  </url>
+
   <url>
     <loc>https://relaxplayer.eu/contact.html</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/contact-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/contact.html"/>
   </url>
   <url>
+    <loc>https://relaxplayer.eu/contact-cs.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/contact-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/contact.html"/>
+  </url>
+
+  <url>
     <loc>https://relaxplayer.eu/privacy.html</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/privacy-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://relaxplayer.eu/privacy-cs.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://relaxplayer.eu/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://relaxplayer.eu/privacy-cs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://relaxplayer.eu/privacy.html"/>
   </url>
 </urlset>
