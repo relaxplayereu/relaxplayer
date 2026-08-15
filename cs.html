@@ -174,8 +174,9 @@
   body.nav-open .nav-scrim { opacity: 1; pointer-events: auto; }
   .side-nav-brand { font-family: 'Orbitron', sans-serif; font-size: 15px; letter-spacing: 3px; margin-bottom: 10px; }
   .side-nav-brand .dot { color: var(--accent-a); }
-  .side-nav a { color: var(--ink); text-decoration: none; font-size: 14px; opacity: 0.85; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .side-nav a { color: var(--ink); text-decoration: none; font-size: 14px; opacity: 0.85; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); border-left: 2px solid transparent; transition: 0.2s; }
   .side-nav a:hover { opacity: 1; color: var(--accent-a); }
+  .side-nav a.active { opacity: 1; color: var(--accent-a); border-left-color: var(--accent-a); background: rgba(0,229,199,0.08); font-weight: 600; }
   .side-nav-cta { margin-top: auto; font-size: 11px; opacity: 0.5; line-height: 1.6; }
 
   header.top-bar { display: flex; align-items: center; justify-content: center; padding: 26px 20px 4px; }
@@ -352,12 +353,12 @@
   <a href="cs.html" onclick="toggleSideNav(false)" data-i18n="nav_home">Home</a>
   <a href="#how" onclick="toggleSideNav(false)" data-i18n="nav_how">How it works</a>
   <a href="#sounds" onclick="toggleSideNav(false)" data-i18n="nav_sounds">Soundscapes</a>
-  <a href="chillout-cs.html" onclick="showSection('chillout', event)" data-i18n="nav_chillout">Chillout Music</a>
-  <a href="why-relaxplayer-cs.html" onclick="showSection('why', event)" data-i18n="nav_why">Why RelaxPlayer</a>
-  <a href="features-cs.html" onclick="showSection('toolkit', event)" data-i18n="nav_toolkit">Tools &amp; Extras</a>
-  <a href="articles-cs.html" onclick="showSection('articles', event)" data-i18n="nav_articles">Articles</a>
-  <a href="faq-cs.html" onclick="showSection('faq', event)" data-i18n="nav_faq">FAQ</a>
-  <a href="contact-cs.html" onclick="showSection('contact', event)" data-i18n="nav_contact">Contact</a>
+  <a href="chillout-cs.html" data-section="chillout" onclick="showSection('chillout', event)" data-i18n="nav_chillout">Chillout Music</a>
+  <a href="why-relaxplayer-cs.html" data-section="why" onclick="showSection('why', event)" data-i18n="nav_why">Why RelaxPlayer</a>
+  <a href="features-cs.html" data-section="toolkit" onclick="showSection('toolkit', event)" data-i18n="nav_toolkit">Tools &amp; Extras</a>
+  <a href="articles-cs.html" data-section="articles" onclick="showSection('articles', event)" data-i18n="nav_articles">Articles</a>
+  <a href="faq-cs.html" data-section="faq" onclick="showSection('faq', event)" data-i18n="nav_faq">FAQ</a>
+  <a href="contact-cs.html" data-section="contact" onclick="showSection('contact', event)" data-i18n="nav_contact">Contact</a>
   <a href="https://uklidnito.eu" target="_blank" rel="noopener" data-i18n="nav_uklidnito" data-i18n-title="nav_uklidnito_title" title="Also by SYNTHLUCIDA: free guided breathing exercises">Uklidni To – breathing exercises</a>
   <a href="https://synthlucida.com/player.html" data-i18n="nav_launch">Launch the player →</a>
   <div class="side-nav-cta" data-i18n="nav_cta">Free 24/7 ambient &amp; ASMR streaming, no sign-up required.</div>
@@ -756,11 +757,42 @@
     target.style.display = '';
     toggleSideNav(false);
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
+    updateActiveNav();
   }
 
   function hideSection(id) {
     document.getElementById(id).style.display = 'none';
     document.getElementById('top').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (history.replaceState) history.replaceState(null, '', location.pathname);
+    updateActiveNav();
+  }
+
+  function updateActiveNav() {
+    const path = location.pathname.split('/').pop() || 'cs.html';
+    const hash = location.hash;
+    document.querySelectorAll('.side-nav a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('http')) { a.classList.remove('active'); return; }
+      const section = a.getAttribute('data-section');
+      let active;
+      if (section) {
+        // These links point to separate SEO-only files (e.g. chillout-cs.html)
+        // but actually just show a same-page section via showSection(), so
+        // match on the current hash rather than on the href's file name.
+        active = path === 'cs.html' && hash === '#' + section;
+      } else {
+        const [hrefFileRaw, hrefHashRaw] = href.split('#');
+        const hrefFile = hrefFileRaw || 'cs.html';
+        const hrefHash = hrefHashRaw ? '#' + hrefHashRaw : '';
+        if (hrefHash) {
+          active = hrefFile === path && hrefHash === hash;
+        } else {
+          active = hrefFile === path && (hash === '' || hash === '#top');
+        }
+      }
+      a.classList.toggle('active', active);
+    });
   }
 
   function toggleSideNav(force) {
@@ -774,8 +806,11 @@
     const id = window.location.hash.replace('#', '');
     if (id && document.getElementById(id) && document.getElementById(id).classList.contains('toggle-section')) {
       showSection(id);
+    } else {
+      updateActiveNav();
     }
   })();
+  window.addEventListener('hashchange', updateActiveNav);
 
   (function backToTop() {
     const btn = document.getElementById('back-to-top');
