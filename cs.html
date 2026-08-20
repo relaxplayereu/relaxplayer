@@ -206,6 +206,18 @@
   .cta-icon { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--accent-a); animation: dotPulse 3.5s ease-in-out infinite; }
   @keyframes dotPulse { 0%,100% { transform: scale(0.75); opacity: 0.5; } 50% { transform: scale(1.2); opacity: 1; } }
   .hero-note { font-size: 11px; opacity: 0.45; margin-top: 18px; letter-spacing: 0.3px; }
+  .store-badge-link {
+    display: inline-flex; align-items: center; gap: 11px;
+    background: rgba(255,255,255,0.06); border: 1px solid var(--accent-a);
+    color: #fff; padding: 11px 22px; border-radius: 40px; text-decoration: none;
+    box-shadow: 0 0 20px rgba(0,229,199,0.3);
+    transition: 0.3s;
+  }
+  .store-badge-link:hover { background: rgba(0,229,199,0.15); box-shadow: 0 0 30px var(--accent-a); }
+  .store-badge-link svg { display: block; flex-shrink: 0; }
+  .store-badge-text { display: flex; flex-direction: column; line-height: 1.3; }
+  .store-badge-text .small { font-size: 9.5px; opacity: 0.68; letter-spacing: 0.4px; }
+  .store-badge-text .big { font-size: 13.5px; font-weight: 700; letter-spacing: 0.2px; font-family: 'Orbitron', sans-serif; }
 
   /* ---------- Preview screenshot ---------- */
   .preview { max-width: 980px; margin: 0 auto; padding: 6px 20px 56px; text-align: center; }
@@ -363,6 +375,7 @@
   <a href="services-cs.html" data-i18n="nav_services" data-i18n-title="nav_services_title" title="Custom ambient music production, sound design &amp; collabs by SYNTHLUCIDA">Services</a>
   <a href="https://uklidnito.eu" target="_blank" rel="noopener" data-i18n="nav_uklidnito" data-i18n-title="nav_uklidnito_title" title="Also by SYNTHLUCIDA: free guided breathing exercises">Uklidni To – breathing exercises</a>
   <a href="https://synthlucida.com/player.html" data-i18n="nav_launch">Launch the player →</a>
+  <a href="https://apps.microsoft.com/detail/9nbv1tn33b57?hl=cs-CZ&amp;gl=CZ" target="_blank" rel="noopener" data-i18n="nav_store">Microsoft Store</a>
   <div class="side-nav-cta" data-i18n="nav_cta">Free 24/7 ambient &amp; ASMR streaming, no sign-up required.</div>
 </nav>
 
@@ -379,6 +392,18 @@
       <a class="cta-btn" href="https://synthlucida.com/player.html">
         <span class="cta-icon" aria-hidden="true"></span>
         <span data-i18n="hero_cta_primary">Launch RelaxPlayer</span>
+      </a>
+      <a class="store-badge-link" href="https://apps.microsoft.com/detail/9nbv1tn33b57?hl=cs-CZ&amp;gl=CZ" target="_blank" rel="noopener" data-i18n-aria="store_badge_aria" aria-label="Stáhnout RelaxPlayer v Microsoft Store">
+        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="0" width="9" height="9" fill="#F35325"></rect>
+          <rect x="11" y="0" width="9" height="9" fill="#81BC06"></rect>
+          <rect x="0" y="11" width="9" height="9" fill="#05A6F0"></rect>
+          <rect x="11" y="11" width="9" height="9" fill="#FFBA08"></rect>
+        </svg>
+        <span class="store-badge-text">
+          <span class="small" data-i18n="store_badge_get">Get it from</span>
+          <span class="big">Microsoft Store</span>
+        </span>
       </a>
     </div>
     <p class="hero-note" data-i18n="hero_note">No account, no app store, no interruptions — just open the tab and breathe out.</p>
@@ -845,6 +870,9 @@
     nav_uklidnito: { en: 'Uklidni To – breathing exercises', cs: 'Uklidni To – dechová cvičení' },
     nav_uklidnito_title: { en: 'Also by SYNTHLUCIDA: free guided breathing exercises with 8 techniques (4-7-8, Box, Coherent...) — pairs nicely with ambient sound in the background.', cs: 'Další projekt od SYNTHLUCIDA: bezplatné vedené dechové cvičení s 8 technikami (4-7-8, Box, Coherent...) — hezky se doplňuje s ambientní hudbou na pozadí.' },
     nav_launch: { en: 'Launch the player →', cs: 'Spustit přehrávač →' },
+    nav_store: { en: 'Microsoft Store', cs: 'Microsoft Store' },
+    store_badge_aria: { en: 'Get RelaxPlayer on the Microsoft Store', cs: 'Stáhnout RelaxPlayer v Microsoft Store' },
+    store_badge_get: { en: 'Get it from', cs: 'Získejte v' },
     nav_cta: { en: 'Free 24/7 ambient &amp; ASMR streaming, no sign-up required.', cs: 'Bezplatné nepřetržité ambientní a ASMR vysílání, bez registrace.' },
 
     hero_eyebrow: { en: 'FREE · 24/7 · NO SIGN-UP', cs: 'ZDARMA · 24/7 · BEZ REGISTRACE' },
